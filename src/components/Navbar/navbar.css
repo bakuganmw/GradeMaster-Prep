@@ -1,0 +1,29 @@
+.bg {
+    background-color: #0C356A;
+    display: flex;
+    position: sticky;
+    top: 0;
+  z-index: 10;
+  }
+
+.logo, .logo:hover{
+  color: #FFF0CE;
+  font-size: calc(10px + 2vmin);
+}
+
+.link {
+  color: #FFC436;
+  font-size: calc(10px + 1vmin);
+  border-radius: 0px 0px 20px 20px;
+}
+
+.link:hover {
+  color: #FFF0CE;
+  font-size: calc(10px + 1vmin);
+  border-radius: 0px 0px 20px 20px;
+}
+
+.buttonLook{
+  background-color: #0174BE;
+  color: #FFF0CE;
+}
