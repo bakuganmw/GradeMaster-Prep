@@ -2,6 +2,7 @@
   text-align: center;
   background-color: #0174BE;
   /* height: 100%; */
+  height: 100vh;
 }
 
 .mainLook {
@@ -19,9 +20,6 @@
 
 .videoLook{
   width: 100%;
-  /* height: 50%;
-  -o-object-fit: cover;
-  object-fit: cover; */
 }
 
 .headerContent{
@@ -32,21 +30,5 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
 }
 

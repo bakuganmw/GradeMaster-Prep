@@ -1,10 +1,18 @@
-import React from 'react'
+import React, { useState } from 'react'
 import './Login.css';
 import '../components/Navbar/navbar.css'
 const Login = () => {
+  const [email, setEmail] = useState('');
+  const [password, setPassword] = useState('');
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+
+    console.log(email,password)
+  }
   return (
     <div className="Auth-form-container">
-      <form className="Auth-form">
+      <form className="Auth-form" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
           <h3 className="Auth-form-title">Log In</h3>
           <div className="form-group mt-3">
@@ -13,6 +21,8 @@ const Login = () => {
               type="email"
               className="form-control mt-1"
               placeholder="Enter email"
+              onChange={(e) => setEmail(e.target.value)}
+              value={email}
             />
           </div>
           <div className="form-group mt-3">
@@ -21,6 +31,8 @@ const Login = () => {
               type="password"
               className="form-control mt-1"
               placeholder="Enter password"
+              onChange={(e) => setPassword(e.target.value)}
+              value={password}
             />
           </div>
           <div className="d-grid gap-2 mt-3">

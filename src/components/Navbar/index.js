@@ -15,7 +15,7 @@ const NavbarElement = () => {
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
             <Nav.Link href="#features"><span className="link">quick question</span></Nav.Link>
-            <Nav.Link href="/sections"><span className="link">działy</span></Nav.Link>
+            <Nav.Link href="/sections"><span className="link">sections</span></Nav.Link>
           </Nav>
         </Navbar.Collapse>
         <Nav>
