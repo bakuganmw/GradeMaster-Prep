@@ -3,7 +3,8 @@ import { useNavigate } from 'react-router-dom';
 import NavbarElement from '../components/Navbar';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
-
+import "bootstrap/dist/css/bootstrap.min.css";
+import './list.css'
 const SectionsPage = () => {
   const navigate = useNavigate();
   const [sections, setSections] = useState([]);
@@ -27,11 +28,13 @@ const SectionsPage = () => {
     <div className='App'>
       <NavbarElement/>
       <h2>Sections</h2>
+      <div className='listLook'>
         {sections.map(item => (
-          <div key={item.name} style={{ display: 'grid', gap: '10px',marginBottom: '15px', border: '1px solid #ccc', padding: '10px', borderRadius: '5px' }}>
-            <Button onClick={() => navigate(`${item.name}`)}>{item.order} {item.name}</Button>
+          <div key={item.name} className='wrappedItemFromList' style={{ marginBottom: '15px', border: '1px solid #ccc', padding: '10px', borderRadius: '5px'}}>
+            <Button onClick={() => navigate(`${item.name}`)} className='itemFromList'>{item.order} {item.name}</Button>
           </div>
         ))}
+      </div>
     </div>
   )
 }

@@ -1,0 +1,23 @@
+.listLook{
+  /* width: 80vw;
+  margin: 0 auto; 
+  display: flex;
+  justify-content: center; 
+  align-items: center; 
+  height: 100vh;  */
+  width: 80vw;
+  margin: 0 auto; /* Center the container horizontally */
+  text-align: center; /* Center the inline children (if any) */
+}
+
+.wrappedItemFromList{
+  display: grid;
+  width: 80vw;
+  box-sizing: border-box; 
+  margin-bottom: 10px; 
+}
+
+.itemFromList{
+  background-color: #FFC436;
+  color: #0C356A;
+}

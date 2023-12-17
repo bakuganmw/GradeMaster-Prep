@@ -3,20 +3,19 @@ import axios from "axios";
 import { useAuthContext } from "./useAuthContext";
 import { useNavigate } from "react-router-dom";
 
-export const useSignup = () => {
+export const useLogin = () => {
   const [error, setError] = useState(null);
   const [isLoading, setIsLoading] = useState(null);
   const { dispatch } = useAuthContext();
   const navigate = useNavigate();
 
-  const signup = async (email, username, password) => {
+  const login = async (email, password) => {
     setIsLoading(true);
     setError(null);
 
     try {
-      const response = await axios.post("http://localhost:4000/signup", {
+      const response = await axios.post("http://localhost:4000/login", {
         email,
-        username,
         password,
       });
 
@@ -35,5 +34,5 @@ export const useSignup = () => {
     }
   };
 
-  return { signup, isLoading, error };
+  return { login, isLoading, error };
 };
