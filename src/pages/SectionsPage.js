@@ -8,30 +8,36 @@ import './list.css'
 const SectionsPage = () => {
   const navigate = useNavigate();
   const [sections, setSections] = useState([]);
-
+  const logged = JSON.parse(localStorage.getItem('user'));
+  let token;
+  if(logged){
+    token = logged.token;
+  }
   useEffect(() => {
     // Funkcja do pobierania danych
     const fetchData = async () => {
       try {
-        const response = await axios.get('http://localhost:4000/sections'); // Zmienić URL na odpowiedni
+        const response = await axios.get('http://localhost:4000/sections',{
+          headers: {
+            'Authorization':  `Bearer ${token}`
+          }
+        }); 
+        
         setSections(response.data);
-
       } catch (error) {
         console.error('Error fetching data:', error);
       }
     };
-
-    // Wywołanie funkcji pobierającej dane
     fetchData();
-  }, []);
+  }, [token]);
   return (
     <div className='App'>
       <NavbarElement/>
-      <h2>Sections</h2>
+      <h2>Działy</h2>
       <div className='listLook'>
         {sections.map(item => (
-          <div key={item.name} className='wrappedItemFromList' style={{ marginBottom: '15px', border: '1px solid #ccc', padding: '10px', borderRadius: '5px'}}>
-            <Button onClick={() => navigate(`${item.name}`)} className='itemFromList'>{item.order} {item.name}</Button>
+          <div key={item.name} className='wrappedItemFromList'>
+            <Button onClick={() => navigate(`${item.name}`)} className='itemFromList'>{item.order+')'}{item.name}</Button>
           </div>
         ))}
       </div>

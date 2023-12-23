@@ -8,8 +8,12 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import './navbar.css'
 import { useLogout } from '../../hooks/useLogout';
 const NavbarElement = () => {
-  const logged = localStorage.getItem('user');
-  
+  const logged = JSON.parse(localStorage.getItem('user'));
+  let username;
+  if(logged){
+    username = logged.username;
+  }
+ 
   const {logout} = useLogout()
   const handleClick = () => {
     logout()
@@ -21,13 +25,15 @@ const NavbarElement = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link href="#features"><span className="link">quick question</span></Nav.Link>
-            <Nav.Link href="/sections"><span className="link">sections</span></Nav.Link>
+            <Nav.Link href="/quickQuestions"><span className="link">szybkie zadania</span></Nav.Link>
+            {logged != null &&
+            <Nav.Link href="/sections"><span className="link">działy</span></Nav.Link>
+            }
           </Nav>
         </Navbar.Collapse>
         <Nav>
           {logged != null
-          ?<NavDropdown title={<span className="link">account</span>} id="collapsible-nav-dropdown">
+          ?<NavDropdown title={<span className="link">{username}</span>} id="collapsible-nav-dropdown">
           <NavDropdown.Item href="#action/3.3">settings</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item onClick={handleClick}>

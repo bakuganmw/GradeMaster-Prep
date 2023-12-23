@@ -1,10 +1,11 @@
+.App {
+  text-align: center;
+  background-color: #0174BE;
+  height: 100vh;
+  position: relative;
+}
+
 .listLook{
-  /* width: 80vw;
-  margin: 0 auto; 
-  display: flex;
-  justify-content: center; 
-  align-items: center; 
-  height: 100vh;  */
   width: 80vw;
   margin: 0 auto; /* Center the container horizontally */
   text-align: center; /* Center the inline children (if any) */
@@ -14,10 +15,19 @@
   display: grid;
   width: 80vw;
   box-sizing: border-box; 
-  margin-bottom: 10px; 
+  margin-bottom: 25px;
+  padding: 10px; 
+  border-radius: 5px;
 }
 
 .itemFromList{
   background-color: #FFC436;
   color: #0C356A;
+  padding: 20px 0;
+  font-size: 20px;
+}
+
+.itemFromList:hover{
+  background-color: #0C356A;
+  color: #FFF0CE ;
 }
