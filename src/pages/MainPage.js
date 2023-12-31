@@ -27,12 +27,12 @@ const MainPage = () => {
         ></video>
       </div>
       <div className="headerContent">
-        <h1>Welcome to GradeMaster</h1>
+        <h1>Witaj w GradeMaster</h1>
         {logged == null
-        ? <div><p>Make a account and learn with us</p>
+        ? <div><p>Zrób konto i ucz się z nami</p>
         <div>
           <a href="/signup">
-          <button onMouseEnter={onHover} onMouseLeave={onHover}>sign up {hover ? <MdArrowForward/> : <MdArrowRight />}</button>
+          <button onMouseEnter={onHover} onMouseLeave={onHover}>Zarejestruj się {hover ? <MdArrowForward/> : <MdArrowRight />}</button>
           </a>
         </div></div>
         : <h1 className="mt-4">{username}</h1>}

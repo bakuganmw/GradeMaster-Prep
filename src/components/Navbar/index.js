@@ -25,7 +25,7 @@ const NavbarElement = () => {
         <Navbar.Toggle aria-controls="responsive-navbar-nav" />
         <Navbar.Collapse id="responsive-navbar-nav">
           <Nav>
-            <Nav.Link href="/quickQuestions"><span className="link">szybkie zadania</span></Nav.Link>
+            <Nav.Link href="/closedQuestions"><span className="link">szybkie zadania</span></Nav.Link>
             {logged != null &&
             <Nav.Link href="/sections"><span className="link">działy</span></Nav.Link>
             }
@@ -40,8 +40,8 @@ const NavbarElement = () => {
             log out
           </NavDropdown.Item>
         </NavDropdown>
-          :<div><Button href="/signup" className='buttonLook me-3'>Sign up</Button>
-          <Button href="/login" className='buttonLook'>Log in</Button></div>}
+          :<div><Button href="/signup" className='buttonLook me-3'>Zarejestruj się</Button>
+          <Button href="/login" className='buttonLook'>Zaloguj się</Button></div>}
         </Nav>
       </Container>
     </Navbar>
