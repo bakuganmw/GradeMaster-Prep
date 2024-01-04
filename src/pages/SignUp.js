@@ -19,39 +19,42 @@ const SignUp = () => {
     <div className="Auth-form-container">
       <form className="Auth-form" onSubmit={handleSubmit}>
         <div className="Auth-form-content">
-          <h3 className="Auth-form-title">Sign Up</h3>
+          <h3 className="Auth-form-title">Rejestracja</h3>
           <div className="form-group mt-3">
-            <label>Email address</label>
+            <label>adres mailowy</label>
             <input
               type="email"
               className="form-control mt-1"
-              placeholder="Enter email"
+              placeholder="Wprowadź e-maila"
               onChange={(e) => setEmail(e.target.value)}
               value={email}
             />
           </div>
           <div className="form-group mt-3">
-            <label>username</label>
+            <label>nazwa użytkownika</label>
             <input
               className="form-control mt-1"
-              placeholder="Enter username"
+              placeholder="Wprowadź nazwę użytkownika"
               onChange={(e) => setUsername(e.target.value)}
               value={username}
             />
           </div>
           <div className="form-group mt-3">
-            <label>Password</label>
+            <label>Hasło</label>
             <input
               type="password"
               className="form-control mt-1"
-              placeholder="Enter password"
+              placeholder="Wprowadź hasło"
               onChange={(e) => setPassword(e.target.value)}
               value={password}
             />
           </div>
           <div className="d-grid gap-2 mt-3">
+          <p className="forgot-password text-right mt-2">
+          Masz już konto? <a href="./login">Zaloguj się</a>
+          </p>
             <button type="submit" className="btn btn-primary mt-2 buttonLook" disabled={isLoading}>
-              Submit
+              Zarejestrój się
             </button>
             {error && <div className='text-danger'>{error}</div>}
           </div>

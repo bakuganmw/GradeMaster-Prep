@@ -5,7 +5,7 @@ import SectionsPage from "./pages/SectionsPage";
 import SignUp from "./pages/SignUp";
 import ChaptersPage from "./pages/ChaptersPage";
 import ClosedExecisePage from "./pages/ClosedExecisePage";
-import MathQuestion from "./pages/quickQuestions";
+import RownaniaPuzzle from "./chapterPages/RownaniaPuzzle";
 function App() {
     return (
       <Router>
@@ -16,7 +16,7 @@ function App() {
           <Route path="/signup" element={<SignUp/>} exact />
           <Route path={"/sections/:sectionName"} element={<ChaptersPage/>} exact />
           <Route path="/closedQuestions" element={<ClosedExecisePage/>} exact />
-          <Route path="/xd" element={<MathQuestion/>} exact />
+          <Route path="/sections/:sectionName/puzzle" element={<RownaniaPuzzle/>} exact />
         </Routes>
       </Router>
     );

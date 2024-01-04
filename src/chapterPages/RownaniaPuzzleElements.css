@@ -1,0 +1,13 @@
+.partContainer {
+    margin-top: 20px;
+  }
+  
+  .inlineInput {
+    display: flex;
+    align-items: center;
+  }
+  
+  .inlineInput p {
+    margin-right: 10px;
+  }
+  

@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    height: 100vh; /* Ensure full height of the viewport */
+    height: 100%; /* Ensure full height of the viewport */
     color: #FFF0CE;
     font-size: 20px;
   }

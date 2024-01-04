@@ -34,10 +34,10 @@ const NavbarElement = () => {
         <Nav>
           {logged != null
           ?<NavDropdown title={<span className="link">{username}</span>} id="collapsible-nav-dropdown">
-          <NavDropdown.Item href="#action/3.3">settings</NavDropdown.Item>
+          <NavDropdown.Item href="#action/3.3">ustawienia</NavDropdown.Item>
           <NavDropdown.Divider />
           <NavDropdown.Item onClick={handleClick}>
-            log out
+            Wyloguj się
           </NavDropdown.Item>
         </NavDropdown>
           :<div><Button href="/signup" className='buttonLook me-3'>Zarejestruj się</Button>
