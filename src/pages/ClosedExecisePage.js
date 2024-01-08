@@ -63,7 +63,7 @@ const ClosedExecisePage = () => {
         {correctAnswerSelected &&(<p className="task mt-5 alert alert-success">Zgadza się!!!!!!</p>)}
         {wrongAnswerSelected &&(<p className="task mt-5 alert alert-danger">Zła odpowiedź!!!!!!</p>)}
         {logged && (correctAnswerSelected || wrongAnswerSelected) &&(<p className="task mt-5">{execise.reason}</p>)}
-        {(correctAnswerSelected || wrongAnswerSelected)&&(<button className=" btn task mt-5 btn-primary" onClick={refreshPage}>Następne zadanie</button>)}
+        {(correctAnswerSelected || wrongAnswerSelected)&&(<button className=" btn task mt-5 btn-primary buttonAnswer" onClick={refreshPage}>Następne zadanie</button>)}
       </div>
     </div>
   );

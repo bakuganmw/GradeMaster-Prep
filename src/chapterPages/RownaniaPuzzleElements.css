@@ -11,13 +11,13 @@
     margin-right: 10px;
   }
   
-  .buttonAnswer{
+  .buttonCheck{
     background-color: #0C356A;
     color: #FFC436;
     font-size: 20px;
   }
 
-  .buttonAnswer:hover{
+  .buttonCheck:hover{
     color: #FFF0CE;
     font-size: 20px;
   }
