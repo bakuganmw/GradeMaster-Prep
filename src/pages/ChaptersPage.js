@@ -41,7 +41,7 @@ const ChaptersPage = () => {
         <div className='listLook'>
         {chapters.map(item => (
           <div key={item.chapterName} className='wrappedItemFromList'>
-            <Button onClick={() => navigate(`puzzle`)} className='itemFromList'>{item.order+ ')'} {item.chapterName} </Button>
+            <Button onClick={() => navigate(`${item.chapterName}`)} className='itemFromList'>{item.order+ ')'} {item.chapterName} </Button>
           </div>
         ))}
       </div>

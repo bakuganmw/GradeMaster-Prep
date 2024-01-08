@@ -11,3 +11,25 @@
     margin-right: 10px;
   }
   
+  .buttonAnswer{
+    background-color: #0C356A;
+    color: #FFC436;
+    font-size: 20px;
+  }
+
+  .buttonAnswer:hover{
+    color: #FFF0CE;
+    font-size: 20px;
+  }
+
+  .formLen1{
+    width: 2vw;
+  }
+
+  .formLen2{
+    width: 4vw;
+  }
+
+  .formLen3{
+    width: 5vw;
+  }
