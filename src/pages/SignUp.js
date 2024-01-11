@@ -10,9 +10,6 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    console.log(email,username,password)
-
     await signup(email,username, password)
   }
   return (
@@ -54,7 +51,7 @@ const SignUp = () => {
           Masz już konto? <a href="./login">Zaloguj się</a>
           </p>
             <button type="submit" className="btn btn-primary mt-2 buttonLook" disabled={isLoading}>
-              Zarejestrój się
+              Zarejestruj się
             </button>
             {error && <div className='text-danger'>{error}</div>}
           </div>

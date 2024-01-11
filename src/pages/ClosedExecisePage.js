@@ -15,7 +15,7 @@ const ClosedExecisePage = () => {
         const response = await axios.get("http://localhost:4000/closedExecises");
         setExecises(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error:", error);
       }
     };
 
@@ -28,7 +28,6 @@ const ClosedExecisePage = () => {
     const correctAnswer = execise.correctAnswer;
 
     if (selectedAnswer === correctAnswer) {
-      console.log("zgadles");
       setCorrectAnswerSelected(true);
     }
     else{
@@ -50,7 +49,7 @@ const ClosedExecisePage = () => {
             {execise.answers.map((answer, index) => (
               <button
                 key={index}
-                className="btn btn-primary mr-2 mb-2 buttonAnswer" // Apply Bootstrap classes
+                className="btn btn-primary mr-2 mb-3 buttonAnswer" // Apply Bootstrap classes
                 onClick={handleSubmit}
                 value={answer}
                 disabled={correctAnswerSelected || wrongAnswerSelected}
@@ -60,10 +59,10 @@ const ClosedExecisePage = () => {
             ))}
           </div>
         )}
-        {correctAnswerSelected &&(<p className="task mt-5 alert alert-success">Zgadza się!!!!!!</p>)}
-        {wrongAnswerSelected &&(<p className="task mt-5 alert alert-danger">Zła odpowiedź!!!!!!</p>)}
-        {logged && (correctAnswerSelected || wrongAnswerSelected) &&(<p className="task mt-5">{execise.reason}</p>)}
-        {(correctAnswerSelected || wrongAnswerSelected)&&(<button className=" btn task mt-5 btn-primary buttonAnswer" onClick={refreshPage}>Następne zadanie</button>)}
+        {correctAnswerSelected &&(<p className="task mt-4 alert alert-success">Zgadza się!!!!!!</p>)}
+        {wrongAnswerSelected &&(<p className="task mt-4 alert alert-danger">Zła odpowiedź!!!!!!</p>)}
+        {logged && (correctAnswerSelected || wrongAnswerSelected) &&(<p className="task mt-4">{execise.reason}</p>)}
+        {(correctAnswerSelected || wrongAnswerSelected)&&(<button className=" btn task my-4 btn-primary buttonAnswer" onClick={refreshPage}>Następne zadanie</button>)}
       </div>
     </div>
   );

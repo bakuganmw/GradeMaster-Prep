@@ -1,25 +1,38 @@
 .page {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    height: 100%; /* Ensure full height of the viewport */
-    color: #FFF0CE;
-    font-size: 20px;
-  }
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+  color: #fff0ce;
+  font-size: 20px;
+}
 
-  .task{
-    max-width: 60vw;
+.task {
+  max-width: 60vw;
   text-align: center;
-  }
-  .button-container {
-    display: flex;
-    justify-content: space-between; /* Adjust as needed, e.g., space-around or space-evenly */
-    width: 60vw; /* Set a maximum width */
-    margin-top: 20px; /* Add some top margin */
-  }
+}
+.button-container {
+  display: flex;
+  justify-content: space-between;
+  width: 60vw;
+  margin-top: 20px;
 
-  .buttonAnswer{
-    background-color: #0C356A;
-    color: #FFF0CE;
-    font-size: 20px;
+  @media only screen and (max-width: 600px) {
+    flex-direction: column;
+    width: 80vw;
+    align-items: center;
   }
+}
+
+.buttonAnswer {
+  background-color: #0c356a;
+  color: #fff0ce;
+  font-size: 20px;
+}
+
+.buttonAnswer :disabled,
+button[disabled]{
+  background-color: #0c356a !important;
+  color: #fff0ce!important;
+  font-size: 20px !important;
+}

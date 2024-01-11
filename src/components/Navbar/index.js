@@ -13,7 +13,7 @@ const NavbarElement = () => {
   if(logged){
     username = logged.username;
   }
- 
+
   const {logout} = useLogout()
   const handleClick = () => {
     logout()

@@ -6,7 +6,9 @@ import "../pages/ClosedExecise.css";
 import './RownaniaPuzzleElements.css';
 import { useNavigate } from "react-router-dom";
 const RownaniaPuzzle = () => {
+  const [counter, setCounter] = useState(0);
   const [openExecise, setOpenExecise] = useState({ value: null });
+  const [advicePart, setAdvicePart] = useState(0);
   const [answer, setAnswer] = useState("");
   const [canAccessPart2, setCanAccessPart2] = useState(false);
   const [canAccessPart3, setCanAccessPart3] = useState(false);
@@ -37,9 +39,8 @@ const RownaniaPuzzle = () => {
           }
         );
         setOpenExecise(response.data);
-        console.log(response.data);
       } catch (error) {
-        console.error("Error fetching data:", error);
+        console.error("Error:", error);
       }
     };
 
@@ -52,9 +53,8 @@ const RownaniaPuzzle = () => {
 
 
   const checkAnswer = () => {
-    console.log(countCorrect)
     if (answer.toLowerCase() === openExecise[0]?.answers[countCorrect]) {
-      
+      setCounter(0);
       if(countCorrect===0){
         setCanAccessPart2(true);
         setCountCorrect(1);
@@ -70,6 +70,7 @@ const RownaniaPuzzle = () => {
       else if(countCorrect===3){
         setCanAccessPart5(true);
         setCountCorrect(4);
+        setAdvicePart(1)
       }
       else if(countCorrect===4){
         setCanAccessPart6(true);
@@ -78,10 +79,12 @@ const RownaniaPuzzle = () => {
       else if(countCorrect===5){
         setCanAccessPart7(true);
         setCountCorrect(6);
+        setAdvicePart(2)
       }
       else if(countCorrect===6){
         setCanAccessPart8(true);
         setCountCorrect(7);
+        setAdvicePart(3);
       }
       else if(countCorrect===7){
         setCanAccessEnd(true);
@@ -89,7 +92,7 @@ const RownaniaPuzzle = () => {
       }
       
     } else {
-      alert("Incorrect answer. Try again.");
+      setCounter(counter+1);
     }
   };
 
@@ -107,9 +110,6 @@ const RownaniaPuzzle = () => {
           <input type="text" className="form-control formLen1" maxLength={1} onChange={handleAnswerChange} disabled={canAccessPart2} />
         </div>
       </div>
-      {!canAccessPart2 && (
-        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Check Answer</button>
-      )}
 
       {canAccessPart2 && (
         <div className="partContainer">
@@ -119,10 +119,6 @@ const RownaniaPuzzle = () => {
           </div>
         </div>
       )}
-      {canAccessPart2 && !canAccessPart3 && (
-        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Check Answer</button>
-      )}
-
 
       {canAccessPart3 && (
         <div className="partContainer">
@@ -131,10 +127,6 @@ const RownaniaPuzzle = () => {
             <input type="text" className="form-control formLen3" maxLength={9} onChange={handleAnswerChange} disabled={canAccessPart4}/>
           </div>
         </div>
-      )}
-
-      {canAccessPart3 && !canAccessPart4 && (
-        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Check Answer</button>
       )}
 
       {canAccessPart4 && (
@@ -147,15 +139,11 @@ const RownaniaPuzzle = () => {
         </div>
       )}
 
-      {canAccessPart4 && !canAccessPart5 && (
-        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Check Answer</button>
-      )}
-
       {canAccessPart5 && (
         <div className="partContainer">
           <div className="inlineInput">
             <p className="pt-3">(2/3)x + (2/3)x</p>
-            <input type="text" className="form-control formLen2" maxLength={2} onChange={handleAnswerChange} disabled={canAccessPart6}/>
+            <input type="text" className="form-control formLen1" maxLength={2} onChange={handleAnswerChange} disabled={canAccessPart6}/>
             <p className="pt-3">=</p>
             {canAccessPart6 && (
             <input type="text" className="form-control formLen1" maxLength={1} onChange={handleAnswerChange} disabled={canAccessPart7}/>
@@ -163,15 +151,6 @@ const RownaniaPuzzle = () => {
           </div>
         </div>
       )}
-
-      {canAccessPart5 && !canAccessPart6 && (
-        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Check Answer</button>
-      )}
-
-      {canAccessPart6 && !canAccessPart7 && (
-        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Check Answer</button>
-      )}
-
 
       {canAccessPart7 && (
         <div className="partContainer">
@@ -183,10 +162,6 @@ const RownaniaPuzzle = () => {
         </div>
       )}
 
-      {canAccessPart7 && !canAccessPart8 && (
-        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Check Answer</button>
-      )}
-
       {canAccessPart8 && (
         <div className="partContainer">
           <div className="inlineInput">
@@ -196,16 +171,48 @@ const RownaniaPuzzle = () => {
         </div>
       )}
 
-      {canAccessPart8 && !canAccessEnd && (
-        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Check Answer</button>
-      )}
-
       {canAccessEnd && (
         <div>
           <p className="mt-3">Gratulacje udało się ci się skończyć zadanie</p>
-          <button className="btn btn-primary buttonAnswer mt-3" onClick={() => navigate('/sections')}>powrot</button>
+          <button className="btn btn-primary buttonAnswer mt-3 mb-5" onClick={() => navigate('/sections')}>powrót</button>
         </div>
         
+      )}
+
+      {counter > 5 && (
+        <p className="task mt-4" style={{color:'#FFC436'}}><strong>{openExecise[0]?.advice[advicePart]}</strong></p>
+      )}
+
+      {!canAccessPart2 && (
+        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Sprawdź odpowiedź</button>
+      )}
+
+      {canAccessPart2 && !canAccessPart3 && (
+        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Sprawdź odpowiedź</button>
+      )}
+
+      {canAccessPart3 && !canAccessPart4 && (
+        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Sprawdź odpowiedź</button>
+      )}
+
+      {canAccessPart4 && !canAccessPart5 && (
+        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Sprawdź odpowiedź</button>
+      )}
+
+      {canAccessPart5 && !canAccessPart6 && (
+        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Sprawdź odpowiedź</button>
+      )}
+
+      {canAccessPart6 && !canAccessPart7 && (
+        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Sprawdź odpowiedź</button>
+      )}
+
+      {canAccessPart7 && !canAccessPart8 && (
+        <button className="btn btn-primary buttonAnswer mt-3" onClick={checkAnswer}>Sprawdź odpowiedź</button>
+      )}
+
+      {canAccessPart8 && !canAccessEnd && (
+        <button className="btn btn-primary buttonAnswer my-3" onClick={checkAnswer}>Sprawdź odpowiedź</button>
       )}
     </div>
   </div>

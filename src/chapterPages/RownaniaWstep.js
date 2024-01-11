@@ -43,7 +43,7 @@ const RownaniaWstep = () => {
             całkowitą ,gdyż nie ma połowy róży. A zatem nie da się kupić bukietu
             za 35 zł.
           </p>
-          <button className="btn btn-primary buttonAnswer mt-3" onClick={() => navigate('puzzle')}>Przejdz do zadania</button>
+          <button className="btn btn-primary buttonAnswer mt-3 mb-5" onClick={() => navigate('puzzle')}>Przejdz do zadania</button>
         </div>
       </div>
     </div>

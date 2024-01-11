@@ -9,8 +9,6 @@ const Login = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    console.log(email,password)
     await login(email,password)
   }
   return (
@@ -44,7 +42,7 @@ const Login = () => {
             </button>
           </div>
           <p className="forgot-password text-right mt-2">
-          Nie masz konta <a href="./signup">Zarejestrój się</a>
+          Nie masz konta <a href="./signup">Zarejestruj się</a>
           </p>
           {error && <div className='text-danger'>{error}</div>}
         </div>
