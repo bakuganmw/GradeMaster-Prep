@@ -124,7 +124,7 @@ const RownaniaPuzzle = () => {
         <div className="partContainer">
           <div className="inlineInput">
             <p className="pt-3">Liczba kupionych e-booków - </p>
-            <input type="text" className="form-control formLen3" maxLength={9} onChange={handleAnswerChange} disabled={canAccessPart4}/>
+            <input type="text" className="form-control formLen3" maxLength={8} onChange={handleAnswerChange} disabled={canAccessPart4}/>
           </div>
         </div>
       )}

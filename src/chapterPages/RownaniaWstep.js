@@ -13,7 +13,7 @@ const RownaniaWstep = () => {
         <div className="partContainer">
           <p className="task">
             W tym dziale przedstawimy jak postępować z zadaniami związanymi z
-            równaniami z treścią.
+            równaniami z treścią. (Odpowiedź w formie ułamka z niewiadomą w przyszłych zadaniach są przedstawione w formie np (1/3)x )
           </p>
           <h2 className="mb-3">Treść</h2>
           <p className="task">
