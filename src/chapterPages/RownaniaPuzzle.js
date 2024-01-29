@@ -104,7 +104,7 @@ const RownaniaPuzzle = () => {
       <p className="task mt-5">{openExecise[0]?.content}</p>
 
       <div className="partContainer">
-        <h2 className="mb-3">Part 1</h2>
+        <h2 className="mb-3">Część 1</h2>
         <div className="inlineInput">
           <p className="pt-3">Liczba kupionych nagród -</p>
           <input type="text" className="form-control formLen1" maxLength={1} onChange={handleAnswerChange} disabled={canAccessPart2} />
@@ -131,7 +131,7 @@ const RownaniaPuzzle = () => {
 
       {canAccessPart4 && (
         <div className="partContainer">
-          <h2>Part 2</h2>
+          <h2>Część 2</h2>
           <div className="inlineInput">
             <p className="pt-3">(2/3)x + (2/3)x- 8 =</p>
             <input type="text" className="form-control formLen1" maxLength={1} onChange={handleAnswerChange} disabled={canAccessPart5}/>
