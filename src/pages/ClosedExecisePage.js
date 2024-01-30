@@ -42,7 +42,7 @@ const ClosedExecisePage = () => {
     <div className="App">
       <NavbarElement />
       <div className="page">
-        <h1 className="my-4">Zadanie zamknięte z poprzednich matur</h1>
+        <h1 className="my-4">Zadanie zamknięte z poprzednich egzaminów</h1>
         <p className="task">{execise.content}</p>
         {execise.answers.length > 0 && (
           <div className="button-container">
